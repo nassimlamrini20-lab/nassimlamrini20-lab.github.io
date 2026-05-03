@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Source+Sans+Pro:wght@400;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", "Source Sans Pro", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  
+  --color-primary: #0f172a; /* Deep Slate Blue */
+  --color-accent: #0ea5e9;  /* Sky Blue */
+  --color-muted: #64748b;
+  
+  --radius-xl: 1rem;
+}
+
+@layer base {
+  body {
+    @apply bg-slate-50 text-slate-900 antialiased;
+  }
+  
+  h1, h2, h3, h4 {
+    @apply font-sans tracking-tight font-bold text-primary;
+  }
+}
+
+.glass-card {
+  @apply bg-white/80 backdrop-blur-md border border-slate-200 shadow-sm transition-all duration-300;
+}
+
+.glass-card:hover {
+  @apply shadow-md border-accent/20;
+}
+
+.academic-link {
+  @apply text-accent hover:text-primary transition-colors duration-200 underline decoration-accent/30 underline-offset-4;
+}
+
+.sidebar-link {
+  @apply flex items-center gap-3 px-4 py-2 rounded-lg text-muted hover:text-primary hover:bg-slate-100 transition-all duration-200;
+}
+
+.sidebar-link.active {
+  @apply text-primary bg-white shadow-sm font-medium;
+}
+
